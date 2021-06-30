@@ -8,6 +8,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+import static java.util.Arrays.asList;
+
 @Service
 public class BookService {
 
@@ -23,6 +25,13 @@ public class BookService {
 
     public Book addBook(Book book) {
         return repo.save(book);
+    }
+
+    public List<Book> addBooks(List<Book> books){
+        for(Book book: books){
+            repo.save(book);
+        }
+        return books;
     }
 
     public int buyBook(List<BookOrder> order) {

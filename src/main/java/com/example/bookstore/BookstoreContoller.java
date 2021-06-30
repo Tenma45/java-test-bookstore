@@ -19,10 +19,16 @@ public class BookstoreContoller {
         return service.getBook();
     }
 
-    @PostMapping("/book")
-        public Book addBook(@RequestBody Book book){
-            return service.addBook(book);
+    @PostMapping("/books")
+        public List<Book> addBooks(@RequestBody List<Book> books){
+            return service.addBooks(books);
     }
+
+    @PostMapping("/book")
+    public Book addBook(@RequestBody Book book){
+        return service.addBook(book);
+    }
+
 
     @PutMapping("/book")
     public int buyBook(@RequestBody List<BookOrder> order){
