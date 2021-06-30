@@ -26,21 +26,21 @@
 
 3. ทำการพัฒนา RESTful API ด้วย Spring Boot (Controller layer, Service layer, Repository layer, and Gateway layer)
 
-https://github.com/Tenma45/java-test-book-store
+https://github.com/Tenma45/java-test-bookstore
 
 4. ทำการทดสอบระบบงานที่พัฒนาด้วย Spring Boot
 ### ทดสอบบน Browser
-![Browser Test](https://github.com/Tenma45/java-test-book-store/blob/main/markdown/browserTest.png)
+![Browser Test](https://github.com/Tenma45/java-test-bookstore/blob/main/markdown/browserTest.png)
 ### ทดสอบด้วย Unit test
-![Browser Test](https://github.com/Tenma45/java-test-book-store/blob/main/markdown/unitTest.png)
+![Browser Test](https://github.com/Tenma45/java-test-bookstore/blob/main/markdown/unitTest.png)
 
 5. API testing with Postman
 ### ทดสอบ Add Books
-![add Books Test](https://github.com/Tenma45/java-test-book-store/blob/main/markdown/addBooks.png)
+![add Books Test](https://github.com/Tenma45/java-test-bookstore/blob/main/markdown/addBooks.png)
 ### ทดสอบ Get Books
-![get Books Test](https://github.com/Tenma45/java-test-book-store/blob/main/markdown/getBooks.png)
+![get Books Test](https://github.com/Tenma45/java-test-bookstore/blob/main/markdown/getBooks.png)
 ### ทดสอบ Buy Books
-![buy Books Test](https://github.com/Tenma45/java-test-book-store/blob/main/markdown/buyBooks.png)
+![buy Books Test](https://github.com/Tenma45/java-test-bookstore/blob/main/markdown/buyBooks.png)
 
 6. ทำการจัดการ version ของ source code ผ่านระบบ Git + GitHub
 
