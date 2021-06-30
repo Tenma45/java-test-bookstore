@@ -1,6 +1,7 @@
 package com.example.bookstore;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
 import java.lang.reflect.Array;
@@ -15,6 +16,10 @@ public class BookService {
 
     @Autowired
     private BookRepository repo;
+
+    public void setRepo(BookRepository repo){
+        this.repo = repo;
+    }
 
     public List<Book> getBook(){
         List<Book> books = repo.findAll();
@@ -55,7 +60,7 @@ public class BookService {
         return totalPrice;
     }
 
-    private int calculatePrice(List<Integer> totalBuy){
+    public int calculatePrice(List<Integer> totalBuy){
         int price = 0;
         List<Integer> grouped = new ArrayList<>();
         List<Integer> tempTotalBuy = totalBuy; //todo (we need all possible cases)
@@ -68,7 +73,10 @@ public class BookService {
                 };
                 // when volume reach 0, remove from totalBuy
                 for(int volume=0;volume<totalBuy.size();volume++) {
-                    if (totalBuy.get(volume) == 0) {totalBuy.remove(volume);}
+                    if (totalBuy.get(volume) <= 0) {
+                        totalBuy.remove(volume);
+                        volume-=1;
+                    }
                 };
                 // record when grouping has finished
                 grouped.add(groupingSize);
@@ -76,8 +84,11 @@ public class BookService {
                 groupingSize = totalBuy.size();
         }
         //now totalBuy remain only a volume, append count of this volume as 1
-        for(int i=0;i<totalBuy.get(0);i++){grouped.add(1);}
-        System.out.println("G"+grouped);
+        if(totalBuy.size()>0){
+            for(int i=0;i<totalBuy.get(0);i++){grouped.add(1);}
+        }
+
+        System.out.println("Grouped: "+grouped);
         for(Integer group: grouped){
             price += group == 5? (5 * 0.75 * 100)
                     :group == 4? (4 * 0.8 * 100)
